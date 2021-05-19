@@ -1,0 +1,20 @@
+{
+  "name": "vendor_name/case_ver3",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "shun",
+      "email": "email@example.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\Controller\\": "App/Controllers",
+      "App\\Model\\": "App/Models"
+    }
+  },
+  "require": {
+  }
+}

@@ -1,0 +1,222 @@
+:root {
+    --primary-color: #f36448;
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --border-color: #dbdbdb;
+
+    --header-height: 120px;
+    --navbar-height: 33px;
+    --header-with-search-height: calc((--header-height) - var(--navbar-height));
+}
+
+* {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+/* toi uu hien thi nd trang wed theo man hinh*/
+.grid {
+    width: 1355px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+/* tu nhay xuong khi thu nho web*/
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+
+/*test*/
+.grid__column-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+.grid__column-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+
+.grid__column-10 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3334%;
+}
+
+/* animation qr*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes growth {
+    from {
+        transform: scale(var(--growth-from));
+    }
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
+/*modal*/
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: fadeIn linear 0.1s;
+}
+
+.modal__overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.modal__body {
+    --growth-from: 0.7;
+    --growth-to: 1;
+    margin: auto;
+    position: relative;
+    z-index: 1; /*cai dat do uu tien cua trang web hien thi khi nhieu trang de len nhau */
+    animation: growth linear 0.1s;
+}
+
+/*btn style*/
+.btn {
+    min-width: 142px;
+    height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding: 0 12px;
+    cursor: pointer;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.6rem;
+}
+
+.btn.btn--normal:hover {
+    background-color: rgba( 0, 0, 0, 0.05);
+}
+
+.btn.btn--size-s {
+    height: 32px;
+    font-size: 1.2rem;
+    padding: 0 8px;
+}
+
+.btn.btn--primary {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.btn.btn--disabled {
+    color: #CCC;
+    cursor: default;
+    background-color: #C4C1C1FF;
+}
+
+/*phan trang pagination*/
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding: 25px;
+}
+
+.pagination-item {
+    margin: 0 12px;
+}
+
+.pagination-item__active .pagination-item__link {
+    color: Var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.pagination-item__active .pagination-item__link:hover{
+    background-color: #f15040;
+}
+
+.pagination-item__icon {
+    font-size: 2.4rem;
+}
+
+.pagination-item__link {
+    --height:30px;
+    display: block;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #b8b5b5;
+    min-width: 40px;
+    height: var(--height);
+    line-height: var(--height);
+    text-align: center;
+    border-radius: 2px;
+}
+
+/*chan trang*/
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 5px solid var(--primary-color);
+    padding-top: 15px;
+}
+
+.footer__heading {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+
+.footer-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer-item__link {
+    display: block;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #737373;
+    padding: 2px 0;
+}
+
+.footer-item__link:hover {
+    color: var(--primary-color);
+}
+
+.footer-item__link-icon {
+    font-size: 1.6rem;
+    margin: -1px 8px 0 0;
+}
